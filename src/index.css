@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary-900 text-white px-6 py-3 rounded-xl
+           hover:bg-primary-800 active:scale-95 transition-all duration-200 font-semibold text-sm tracking-wide shadow-sm;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-gold text-white px-6 py-3 rounded-xl
+           hover:bg-gold-dark active:scale-95 transition-all duration-200 font-semibold text-sm tracking-wide shadow-sm;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-primary-900 text-primary-900 px-6 py-3 rounded-xl
+           hover:bg-primary-900 hover:text-white active:scale-95 transition-all duration-200 font-semibold text-sm;
+  }
+
+  /* ── Inputs ── */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm text-slate-800
+           placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-900/20 focus:border-primary-900
+           transition-all duration-200;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide;
+  }
+
+  /* ── Section heading ── */
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-bold text-primary-900;
+  }
+  .section-sub {
+    @apply text-slate-500 text-base mt-2;
+  }
+}
+
+/* ── Loader ── */
+.loader {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0f172a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Smooth page transitions ── */
+main { animation: fadeIn 0.25s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
